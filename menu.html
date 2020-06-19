@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Base de datos del hospital</title>
+  </head>
+  <body>
+    <p>Base de Datos del Hospital</p>
+    <p>
+
+
+    </p>
+    <p>Estos son los Menus</p>
+    <p>
+
+    <p>
+    <p>
+      1.Consultar la informacion de un paicente</br>
+      2.asignar una habitacion al paciente</br>
+      3.consultar pro sexo del paciente</br>
+      4.ingresar un nuevo paciente</br>
+      5.busqueda por cedula del paciente</br>
+    </p>
+    <p>
+      <input type="number" id="numero" />
+      <input type="button" value="Extraer" id="extraer" />
+      <button onclick="back()">Volver</button>
+    </p>
+    <p id="resultado"></p>
+    <script>
+    var b = document.getElementById("extraer");//se toma el elemnto extraer y se guarda en la variable
+    var resultado = document.getElementById("resultado");// igual que el anterior se toma el elemento resultado y se guarda
+    b.addEventListener("click", entregar);
+    var num = 0;
+    var entregado = [];//se crea entregado
+
+    class Pacientes{//se crea una clase para poder asignar los pacientes
+      constructor(n, fn, s,nm, h)//se crean la variables
+      {
+        this.nombre = n;//se asigna como se va a guardar el nombre
+        this.fn = fn;// se asigna como de guarda la fecha de nacimiento
+        this.sexo = s;//se asigna el sexo
+        this.nm = nm;//se asigna el numero telefonico
+        this.habitacion = h;// se asigna como se guarda la habitacion
+      }
+      mostrar()//se crea una funcion
+      {
+        document.write("<p>");
+        document.write("<strong>" + this.nombre + "</strong><br />");
+        document.write("Fecha de Nacimiento: " + this.fn + "<br />");
+        document.write("Sexo: " + this.sexo + "<br />");
+        document.write("Numero Telefonico: " + this.nm);
+        document.write("</p>");
+      }
+    }
+    var colection = [];
+    var e = colection.push(new Pacientes("Eduardo", "5/17/1997", "masculino", "319127988", this.habitacion));// los pacientes
+    var i = colection.push(new Pacientes("Juan", "5/17/1997", "masculino", "3173181253", this.habitacion));
+    var a = colection.push(new Pacientes("Andres", "5/22/1978", "masculino", "320465876", this.habitacion));
+
+    var habitacion = [];// array de habitacion
+
+    console.log(colection.sort(function sort(prev, next){//ordenamiento sort
+      if(prev.nombre > next.nombre)
+      {
+        return 1;
+      }
+      if(prev.nombre < next.nombre)
+      {
+        return -1;
+      }
+    }));
+
+    function entregar()// funcion entregar
+    {
+      var t = document.getElementById("numero");// se obtiene el numero del menu
+      num = parseInt(t.value);// se conviete en un entero
+      if(num === 1)// comparacion
+      {
+        window.location = "op1.html";// redirecionamiento a otra pagina(programa)
+      }
+      if(num === 2)// // comparacion
+      {
+        window.location = "op2.html";// redirecionamiento a otra pagina(programa)
+      }
+      if(num === 3)// comparacion
+      {
+        window.location = "op3.html";// redirecionamiento a otra pagina(programa)
+      }
+      if(num === 4)// comparacion
+      {
+        window.location = "opd4.html";// redirecionamiento a otra pagina(programa)
+      }
+      if(num === 5)// comparacion
+      {
+        window.location = "op5.html";// redirecionamiento a otra pagina(programa)
+      }
+    }
+
+    </script>
+  </body>
+</html>
